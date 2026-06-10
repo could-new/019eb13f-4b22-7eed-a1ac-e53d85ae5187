@@ -13,19 +13,6 @@ void main() {
   );
 }
 
-// InheritedNotifier to provide AppState down the tree
-class AppStateScope extends InheritedNotifier<AppState> {
-  const AppStateScope({
-    super.key,
-    required AppState state,
-    required super.child,
-  }) : super(notifier: state);
-
-  static AppState of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<AppStateScope>()!.notifier!;
-  }
-}
-
 class ZeldaApp extends StatelessWidget {
   const ZeldaApp({super.key});
 
